@@ -2,7 +2,7 @@ import { useState } from 'react';
 import css from './ContactForm.module.css';
 import { Notify } from 'notiflix';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/slice';
+import { addContact, getContacts } from 'redux/slice';
 import { nanoid } from '@reduxjs/toolkit';
 
 function ContactForm() {
@@ -11,7 +11,7 @@ function ContactForm() {
     number: '',
   });
 
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
   const handleChange = e => {

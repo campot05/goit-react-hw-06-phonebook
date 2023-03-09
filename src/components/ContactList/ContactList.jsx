@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import css from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/slice';
+import { deleteContact, getContacts, getFilter } from 'redux/slice';
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const test = useSelector(state => state.contacts.contacts);
-  const test1 = useSelector(state => state.contacts.filter);
+  const test = useSelector(getContacts);
+  console.log(test);
+  const test1 = useSelector(getFilter);
   return (
     <ul className={css.list}>
       {test.map(({ id, name, number }) => {
