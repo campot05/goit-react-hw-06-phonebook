@@ -25,7 +25,7 @@ function ContactForm() {
   const handleSubmit = e => {
     e.preventDefault();
     for (const contact of contacts) {
-      if (contact.name === formData.name) {
+      if (contact.name.toLowerCase() === formData.name.toLowerCase()) {
         return Notify.failure(`${formData.name} is already in contacts.`);
       }
     }
