@@ -5,7 +5,6 @@ import { deleteContact, getContacts, getFilter } from 'redux/slice';
 export const ContactList = () => {
   const dispatch = useDispatch();
   const test = useSelector(getContacts);
-  console.log(test);
   const test1 = useSelector(getFilter);
   return (
     <ul className={css.list}>
