@@ -5,10 +5,13 @@ import { deleteContact } from 'redux/slice';
 export const ContactList = () => {
   const dispatch = useDispatch();
   const test = useSelector(state => state.contacts.contacts);
-
+  const test1 = useSelector(state => state.contacts.filter);
   return (
     <ul className={css.list}>
       {test.map(({ id, name, number }) => {
+        if (!name.toLowerCase().includes(test1.toLowerCase())) {
+          return null;
+        }
         return (
           <li key={id} className={css.name}>
             {name}: {number}

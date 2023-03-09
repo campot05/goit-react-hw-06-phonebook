@@ -5,14 +5,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/slice';
 import { nanoid } from '@reduxjs/toolkit';
 
-function ContactForm({ onSubmit }) {
+function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     number: '',
   });
 
   const contacts = useSelector(state => state.contacts.contacts);
-
   const dispatch = useDispatch();
 
   const handleChange = e => {
